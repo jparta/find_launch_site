@@ -1,4 +1,5 @@
 import pandas as pd
+from shapely import LineString, Polygon
 
 from bad_launch import keep_away_from_when_launching
 
@@ -52,3 +53,32 @@ def get_distance(row: pd.Series):
     else:
         raise ValueError(f"Could not find distance for {row}")
 
+
+def is_linestring_proper_polygon(lstring):
+    """Check if a linestring is a proper polygon
+    (i.e. the first and last coordinates are the same)
+    """
+    return lstring.coords[0] == lstring.coords[-1]
+
+
+def linestring_to_polygon(geometry):
+    """Get a Polygon from a LineString
+    If geometry is not a LineString or is not a proper polygon, return the original geometry
+    """
+    if (isinstance(geometry, LineString)
+        and is_linestring_proper_polygon(geometry)):
+        return Polygon(geometry)
+    else:
+        return geometry
+
+
+def count_geom_vertices(geom):
+    count = 0
+    if hasattr(geom, 'geoms'):
+        count += sum(count_geom_vertices(part) for part in geom.geoms)
+    else:
+        if hasattr(geom, 'exterior'):
+            count += len(geom.exterior.coords)
+        if hasattr(geom, 'interiors'):
+            count += sum(len(interior.coords) for interior in geom.interiors)
+    return count
