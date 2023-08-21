@@ -1,0 +1,11 @@
+black[jupyter]
+cartopy
+contextily
+geopandas
+ipykernel
+matplotlib
+osm2geojson
+pykdtree
+requests
+requests-futures
+shapely

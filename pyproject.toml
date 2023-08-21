@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "find_launch_site"
+description = "find a suitable launch site for a high altitude balloon"
+version = "0.1.0"
+readme = "README.rst"
+requires-python = ">=3.10"
+keywords = ["HAB", "high-altitude balloon", "launch site", "OSM"]
+#license = {text = "BSD 3-Clause License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+	"black[jupyter]",
+	"cartopy",
+	"contextily",
+	"geopandas",
+	"ipykernel",
+	"matplotlib",
+	"osm2geojson",
+	"pykdtree",
+	"requests",
+	"requests-futures",
+	"shapely",
+]
+#dynamic = ["version"]
+
+# [project.optional-dependencies]
+
+# [project.scripts]
+

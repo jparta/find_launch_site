@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: find-launch-site
+Version: 0.1.0
+Summary: find a suitable launch site for a high altitude balloon
+Keywords: HAB,high-altitude balloon,launch site,OSM
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
