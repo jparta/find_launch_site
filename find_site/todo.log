@@ -1,0 +1,3 @@
+
+
+- The suggestion finding way is different in the notebook than in the script. Polygons are rejected after a set number of suggestinos land on them. Move to the script as well.
