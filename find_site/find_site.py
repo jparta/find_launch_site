@@ -296,7 +296,7 @@ def filter_to_largest_polygons(gdf):
         geometry=largest_polygons_shapely, crs=metric_crs
     )
     return largest_polygons_gdf
-        
+
 
 def find_suggested_launch_locations(possible_launch_area_gdf: gpd.GeoDataFrame, n_suggestions: int):
     # %%
@@ -413,7 +413,7 @@ def find_suggested_launch_locations(possible_launch_area_gdf: gpd.GeoDataFrame, 
 
     for suggestion in suggestions_gdf:
         print_osm_url(suggestion)
-    
+
     return suggestions_gdf
 
 
