@@ -77,6 +77,7 @@ def linestrings_to_polygons(gdf):
     print(not_linestrings_anymore)
 
     print(gdf.geometry.type.value_counts())
+    return gdf
 
 
 def report_vertices_count(gdf):
@@ -91,6 +92,7 @@ def prepare_bad_launching_areas_and_features():
     gdf = geojson_features_to_geodataframe(geojson_features)
 
     gdf = clean_up_data_and_limit_columns(gdf)
+    gdf = linestrings_to_polygons(gdf)
 
     # gdf = glob_unification_with_tags(gdf)
 
